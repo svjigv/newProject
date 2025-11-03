@@ -1,18 +1,21 @@
 package onlineAdministation;
 public class Room{
-    private int roomNumber, price;
-    private boolean isAvailable;
-    private String status;
-    public Room(int roomNumber, boolean isAvaivable, String status, int price) {
+    protected int roomNumber, price, numberOfVisitors, capacity, rating;
+    protected boolean isAvailable;
+    protected String status;
+    public Room(int roomNumber, boolean isAvaivable, String status, int price,  int numberOfVisitors, int capacity, int rating) {
         this.roomNumber = roomNumber;
         this.isAvailable = isAvaivable;
         this.status = status;
         this.price = price;
+        this.numberOfVisitors = numberOfVisitors;
+        this.capacity = capacity;
+        this.rating = rating;
     }
-    public boolean GetIsAvailable() {
+    public boolean getIsAvailable() {
         return isAvailable;
     }
-    private void setIsAvaivable(boolean isAvaivable) {
+    protected void setIsAvaivable(boolean isAvaivable) {
         this.isAvailable = isAvaivable;
     }
     public String getStatus() {
@@ -21,7 +24,7 @@ public class Room{
     public int getRoomNumber() {
         return roomNumber;
     }
-    private void setStatus(String status) {
+    protected void setStatus(String status) {
         this.status = status;
     }
     public int getPrice() {
@@ -30,28 +33,22 @@ public class Room{
     public void changePrice(int newPrice) {
         this.price = newPrice;
     }
-    public void moveIn() {
-        setIsAvaivable(false);
-        setStatus("Номер занят");
+    public void setNumberOfVisitors(int numberOfVisitors) {
+        this.numberOfVisitors = numberOfVisitors;
     }
-    public void moveOut() {
-        setIsAvaivable(true);
-        setStatus("Номер свободен");
+    public int getNumberOfVisitors() {
+        return numberOfVisitors;
     }
-    public void onRepair(){
-        setIsAvaivable(false);
-        setStatus("Номер ремонтируется");
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
-    public void offRepair(){
-        setIsAvaivable(true);
-        setStatus("Номер свободен");
+    public int getCapacity() {
+        return capacity;
     }
-    public void onService(){
-        setIsAvaivable(false);
-        setStatus("Номер обслуживается");
+    public void setRating(int rating) {
+        this.rating = rating;
     }
-    public void offService(){
-        setIsAvaivable(true);
-        setStatus("Номер свободен");
+    public int getRating() {
+        return rating;
     }
 }
