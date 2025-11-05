@@ -8,7 +8,6 @@ public class Hotel {
     protected Set<Room> rooms;
     protected Set<Services> services;
     protected Set<Visitor> visitors;
-    protected VisitorService visitorService;
     public Hotel(String name) {
         this.name = name;
         this.rooms = new HashSet<Room>();
