@@ -1,4 +1,4 @@
-package onlineAdministation;
+package entity;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,6 +14,10 @@ public class Hotel {
         this.services = new HashSet<Services>();
         this.visitors = new HashSet<Visitor>();
     }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {}
     public Set<Room> getRooms() {
         return rooms;
     }
