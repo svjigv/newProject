@@ -1,5 +1,5 @@
-package onlineAdministation;
-
+package services;
+import entity.*;
 import java.util.Date;
 
 public class VisitorService extends Visitor {

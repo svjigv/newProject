@@ -1,4 +1,4 @@
-package onlineAdministation;
+package entity;
 
 import java.util.Date;
 import java.util.HashSet;

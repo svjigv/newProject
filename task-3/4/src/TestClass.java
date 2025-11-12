@@ -1,4 +1,7 @@
-package onlineAdministation;
+import entity.*;
+import services.*;
+import controller.*;
+
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -15,6 +18,7 @@ public class TestClass {
         VisitorService visitor2 = new VisitorService("Даниил", r101);
         VisitorService visitor3 = new VisitorService("Александр", r103);
         VisitorService visitor4 = new VisitorService("Дарья", r101);
+
 
         r101.moveIn();
         System.out.println(r101.getIsAvailable() + " " + r101.getStatus());
@@ -110,6 +114,18 @@ public class TestClass {
         visitor4.setDateOfMovingOut((new SimpleDateFormat("dd-MM-yyyy").parse("30-10-2024")));
         r102.getLastVisitors();
         System.out.println("\n" + r101.getPayment());
+
+        Menu menu = new Menu(hotel.getName());
+        Builder builder = new Builder(menu);
+        Navigator navigator = new Navigator(menu);
+        MenuController controller = new MenuController(builder, navigator);
+        builder.buildMenu(hotel);
+        controller.run();
+
+
+
+
+
 
     }
 }
